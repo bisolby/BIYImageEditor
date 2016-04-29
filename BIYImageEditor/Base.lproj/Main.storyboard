@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Image Editor View Controller-->
@@ -20,17 +21,48 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-Y3-3rj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="rPg-mg-mBN"/>
+                                </connections>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIv-KT-mo6" userLabel="Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-73-2sr" userLabel="Area View">
+                                        <rect key="frame" x="80" y="80" width="440" height="440"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="jLr-73-2sr" secondAttribute="height" multiplier="1:1" id="Kek-KV-aJH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="jLr-73-2sr" firstAttribute="leading" secondItem="OIv-KT-mo6" secondAttribute="leading" constant="80" id="ewa-Py-Fws"/>
+                                    <constraint firstAttribute="trailing" secondItem="jLr-73-2sr" secondAttribute="trailing" constant="80" id="hA5-R7-djU"/>
+                                    <constraint firstItem="jLr-73-2sr" firstAttribute="centerY" secondItem="OIv-KT-mo6" secondAttribute="centerY" id="x9B-7t-pQ2"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0Ub-Y3-3rj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GEN-eG-r9i"/>
+                            <constraint firstItem="OIv-KT-mo6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ORp-As-pmR"/>
+                            <constraint firstAttribute="trailing" secondItem="OIv-KT-mo6" secondAttribute="trailing" id="RAx-Yl-TmI"/>
+                            <constraint firstAttribute="bottom" secondItem="OIv-KT-mo6" secondAttribute="bottom" id="Ska-eh-9Er"/>
                             <constraint firstItem="0Ub-Y3-3rj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YYX-bh-Ph4"/>
+                            <constraint firstItem="OIv-KT-mo6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dCX-3s-MxS"/>
                             <constraint firstAttribute="bottom" secondItem="0Ub-Y3-3rj" secondAttribute="bottom" id="gAl-MN-QBD"/>
                             <constraint firstAttribute="trailing" secondItem="0Ub-Y3-3rj" secondAttribute="trailing" id="pYV-cG-84v"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7l0-6G-45W"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="areaView" destination="jLr-73-2sr" id="MUd-WR-Pcb"/>
+                        <outlet property="imageView" destination="OIv-KT-mo6" id="nXu-fX-5w2"/>
+                        <outlet property="scrollView" destination="0Ub-Y3-3rj" id="3xE-Ks-zrj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
