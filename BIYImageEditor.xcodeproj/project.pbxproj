@@ -13,6 +13,7 @@
 		C40D9A2C1CD352750068E55B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40D9A2A1CD352750068E55B /* Main.storyboard */; };
 		C40D9A2E1CD352750068E55B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40D9A2D1CD352750068E55B /* Assets.xcassets */; };
 		C40D9A311CD352750068E55B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C40D9A2F1CD352750068E55B /* LaunchScreen.storyboard */; };
+		C40D9A3B1CD3539D0068E55B /* BIYImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40D9A3A1CD3539D0068E55B /* BIYImageEditorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		C40D9A2D1CD352750068E55B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40D9A301CD352750068E55B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C40D9A321CD352750068E55B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C40D9A391CD3539D0068E55B /* BIYImageEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BIYImageEditorViewController.h; sourceTree = "<group>"; };
+		C40D9A3A1CD3539D0068E55B /* BIYImageEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BIYImageEditorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		C40D9A201CD352750068E55B /* BIYImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				C40D9A381CD353360068E55B /* ImageEditor */,
 				C40D9A241CD352750068E55B /* AppDelegate.h */,
 				C40D9A251CD352750068E55B /* AppDelegate.m */,
 				C40D9A271CD352750068E55B /* ViewController.h */,
@@ -77,6 +81,15 @@
 				C40D9A221CD352750068E55B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C40D9A381CD353360068E55B /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				C40D9A391CD3539D0068E55B /* BIYImageEditorViewController.h */,
+				C40D9A3A1CD3539D0068E55B /* BIYImageEditorViewController.m */,
+			);
+			name = ImageEditor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 			files = (
 				C40D9A291CD352750068E55B /* ViewController.m in Sources */,
 				C40D9A261CD352750068E55B /* AppDelegate.m in Sources */,
+				C40D9A3B1CD3539D0068E55B /* BIYImageEditorViewController.m in Sources */,
 				C40D9A231CD352750068E55B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +314,7 @@
 				C40D9A371CD352750068E55B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
