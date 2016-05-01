@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9v0-dr-M7X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9v0-dr-M7X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -15,72 +15,49 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ub-Y3-3rj">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.28235294119999998" green="0.35686274509999999" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="rPg-mg-mBN"/>
                                 </connections>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIv-KT-mo6" userLabel="Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-73-2sr" userLabel="Area View">
-                                        <rect key="frame" x="20" y="20" width="560" height="560"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="jLr-73-2sr" secondAttribute="height" multiplier="1:1" id="Kek-KV-aJH"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-73-2sr" userLabel="Area View">
+                                <rect key="frame" x="20" y="144" width="280" height="280"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="jLr-73-2sr" firstAttribute="centerX" secondItem="OIv-KT-mo6" secondAttribute="centerX" id="CkJ-ei-bbX"/>
-                                    <constraint firstItem="jLr-73-2sr" firstAttribute="top" secondItem="OIv-KT-mo6" secondAttribute="top" constant="20" id="Qfd-cV-m7k"/>
-                                    <constraint firstAttribute="bottom" secondItem="jLr-73-2sr" secondAttribute="bottom" constant="20" id="cLG-rh-gym"/>
+                                    <constraint firstAttribute="width" secondItem="jLr-73-2sr" secondAttribute="height" multiplier="1:1" id="ZIS-qm-rMk"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CkJ-ei-bbX"/>
-                                        <exclude reference="Qfd-cV-m7k"/>
-                                        <exclude reference="cLG-rh-gym"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="CkJ-ei-bbX"/>
-                                        <include reference="Qfd-cV-m7k"/>
-                                        <include reference="cLG-rh-gym"/>
-                                    </mask>
-                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OIv-KT-mo6" userLabel="Image View">
+                                <rect key="frame" x="34" y="24" width="37" height="94"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0Ub-Y3-3rj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="GEN-eG-r9i"/>
-                            <constraint firstItem="OIv-KT-mo6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ORp-As-pmR"/>
-                            <constraint firstAttribute="trailing" secondItem="OIv-KT-mo6" secondAttribute="trailing" id="RAx-Yl-TmI"/>
-                            <constraint firstAttribute="bottom" secondItem="OIv-KT-mo6" secondAttribute="bottom" id="Ska-eh-9Er"/>
-                            <constraint firstItem="0Ub-Y3-3rj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YYX-bh-Ph4"/>
-                            <constraint firstItem="OIv-KT-mo6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dCX-3s-MxS"/>
-                            <constraint firstAttribute="bottom" secondItem="0Ub-Y3-3rj" secondAttribute="bottom" id="gAl-MN-QBD"/>
-                            <constraint firstAttribute="trailing" secondItem="0Ub-Y3-3rj" secondAttribute="trailing" id="pYV-cG-84v"/>
+                            <constraint firstAttribute="bottom" secondItem="0Ub-Y3-3rj" secondAttribute="bottom" id="IYr-Vc-cQ7"/>
+                            <constraint firstAttribute="trailing" secondItem="jLr-73-2sr" secondAttribute="trailing" constant="20" id="IZC-KG-E7S"/>
+                            <constraint firstAttribute="trailing" secondItem="0Ub-Y3-3rj" secondAttribute="trailing" id="YJW-U7-JOy"/>
+                            <constraint firstItem="0Ub-Y3-3rj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="a32-1m-mCD"/>
+                            <constraint firstItem="jLr-73-2sr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="gcI-Ty-M7u"/>
+                            <constraint firstItem="0Ub-Y3-3rj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gpo-sh-de8"/>
+                            <constraint firstItem="jLr-73-2sr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jTH-2N-18c"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="7l0-6G-45W"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="areaView" destination="jLr-73-2sr" id="MUd-WR-Pcb"/>
-                        <outlet property="imageView" destination="OIv-KT-mo6" id="nXu-fX-5w2"/>
                         <outlet property="scrollView" destination="0Ub-Y3-3rj" id="3xE-Ks-zrj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1335" y="648"/>
+            <point key="canvasLocation" x="712" y="613.43999999999994"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v2u-qs-J8S">
@@ -98,7 +75,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mS1-kd-t7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="649"/>
+            <point key="canvasLocation" x="335.46666666666664" y="614.38666666666666"/>
         </scene>
     </scenes>
 </document>
