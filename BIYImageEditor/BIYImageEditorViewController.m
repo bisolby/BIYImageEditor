@@ -27,7 +27,7 @@ static CGFloat maximumScale = 10.f;
 {
     [super viewDidLoad];
     
-    _originalImage = [UIImage imageNamed:@"2.jpg"];
+    _originalImage = [UIImage imageNamed:@"5.jpg"];
     
     _imageView = [UIImageView new];
     [_scrollView addSubview:_imageView];
@@ -55,6 +55,7 @@ static CGFloat maximumScale = 10.f;
     _areaView.layer.borderWidth = 2.f / [UIScreen mainScreen].scale;
     
     [self configureImageView];
+    _scrollView.contentSize = _imageView.bounds.size;
     [self configureContentSizeOfScrollView];
     [self configureCenterOfScrollView];
     
@@ -71,33 +72,29 @@ static CGFloat maximumScale = 10.f;
 - (void)configureImageView
 {
     CGFloat scaleToFit = 1.f;
-    if (_originalImage.size.width > _originalImage.size.height)
-    {
-        scaleToFit = CGRectGetHeight(_areaView.frame) / _originalImage.size.height;
+    if ((_originalImage.size.width / _originalImage.size.height) > CGRectGetWidth(_areaView.frame) / CGRectGetHeight(_areaView.frame)) {
+        scaleToFit = _originalImage.size.height / CGRectGetHeight(_areaView.frame);
         
         CGRect imageViewFrame = _imageView.frame;
         imageViewFrame.origin.x = _areaView.frame.origin.x;
         imageViewFrame.origin.y = _areaView.frame.origin.y;
-        imageViewFrame.size.width = _originalImage.size.width * scaleToFit;
+        imageViewFrame.size.width = _originalImage.size.width / scaleToFit;
         imageViewFrame.size.height = CGRectGetHeight(_areaView.frame);
         _imageView.frame = imageViewFrame;
     }
-    else
-    {
-        scaleToFit = CGRectGetWidth(_areaView.frame) / _originalImage.size.width;
+    else {
+        scaleToFit = _originalImage.size.width / CGRectGetWidth(_areaView.frame);
         
         CGRect imageViewFrame = _imageView.frame;
         imageViewFrame.origin.x = _areaView.frame.origin.x;
         imageViewFrame.origin.y = _areaView.frame.origin.y;
-        imageViewFrame.size.width = CGRectGetHeight(_areaView.frame);
-        imageViewFrame.size.height = _originalImage.size.height * scaleToFit;
+        imageViewFrame.size.width = CGRectGetWidth(_areaView.frame);
+        imageViewFrame.size.height = _originalImage.size.height / scaleToFit;
         _imageView.frame = imageViewFrame;
     }
     
     _imageView.image = _originalImage;
     _imageView.userInteractionEnabled = NO;
-    
-    _scrollView.contentSize = _imageView.bounds.size;
 }
 
 - (void)configureContentSizeOfScrollView
@@ -133,8 +130,8 @@ static CGFloat maximumScale = 10.f;
                                                                   CGRectGetWidth(_areaView.frame) - 2.0,
                                                                   CGRectGetHeight(_areaView.frame) - 2.0)];
     circleView.layer.masksToBounds = YES;
-    circleView.layer.cornerRadius = CGRectGetWidth(_areaView.frame) / 2.0;
-    circleView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:1.f];
+    circleView.layer.cornerRadius = 0.f; //CGRectGetWidth(_areaView.frame) / 2.0;
+    circleView.backgroundColor = [UIColor whiteColor];
     circleView.center = rectView.center;
     
     [rectView addSubview:circleView];

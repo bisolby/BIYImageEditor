@@ -26,10 +26,10 @@
                                 </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jLr-73-2sr" userLabel="Area View">
-                                <rect key="frame" x="20" y="144" width="280" height="280"/>
+                                <rect key="frame" x="20" y="205.5" width="280" height="157.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="jLr-73-2sr" secondAttribute="height" multiplier="1:1" id="ZIS-qm-rMk"/>
+                                    <constraint firstAttribute="width" secondItem="jLr-73-2sr" secondAttribute="height" multiplier="16:9" id="ZIS-qm-rMk"/>
                                 </constraints>
                             </view>
                         </subviews>
