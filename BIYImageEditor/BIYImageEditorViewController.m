@@ -43,8 +43,6 @@ static CGFloat maximumScale = 10.f;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -125,10 +123,7 @@ static CGFloat maximumScale = 10.f;
     UIView *rectView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     rectView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5f];
     
-    UIView *circleView = [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMinX(_areaView.frame) + 1.0,
-                                                                  CGRectGetMinY(_areaView.frame) + 1.0,
-                                                                  CGRectGetWidth(_areaView.frame) - 2.0,
-                                                                  CGRectGetHeight(_areaView.frame) - 2.0)];
+    UIView *circleView = [[UIView alloc] initWithFrame:_areaView.frame];
     circleView.layer.masksToBounds = YES;
     circleView.layer.cornerRadius = 0.f; //CGRectGetWidth(_areaView.frame) / 2.0;
     circleView.backgroundColor = [UIColor whiteColor];
@@ -157,11 +152,11 @@ static CGFloat maximumScale = 10.f;
 {
     UIGraphicsBeginImageContextWithOptions([UIScreen mainScreen].bounds.size, false, 0.0);
     
-//    self.imageView.hidden = YES;
+    _areaView.hidden = YES;
     
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     
-//    self.imageView.hidden = NO;
+    _areaView.hidden = NO;
     
     UIImage *baseImage = UIGraphicsGetImageFromCurrentImageContext();
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -175,6 +170,18 @@ static CGFloat maximumScale = 10.f;
     
     return [[UIImage alloc] initWithCGImage:clipImage];
 }
+
+- (IBAction)clipImage:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    if ([_delegate respondsToSelector:@selector(clipImageFromEditor:)])
+    {
+        [_delegate clipImageFromEditor:[self clipImage]];
+    }
+}
+
+#pragma mark - UIScrollView Delegate
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {

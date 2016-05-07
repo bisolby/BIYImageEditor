@@ -7,21 +7,46 @@
 //
 
 #import "ViewController.h"
+#import "BIYImageEditorViewController.h"
 
-@interface ViewController ()
+static NSString * const biyImageEditorSegue = @"showImageEditor";
+
+@interface ViewController () <BIYImageEditorDelegate>
+
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImageView;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)thumbnailControlTapped:(UIControl *)sender
+{
+    [self performSegueWithIdentifier:biyImageEditorSegue sender:self];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:biyImageEditorSegue]) {
+        BIYImageEditorViewController *imvc = segue.destinationViewController;
+        imvc.delegate = self;
+    }
+}
+
+#pragma mark - BIYImageEditorDelegate
+
+- (void)clipImageFromEditor:(UIImage *)clipImage
+{
+    _thumbnailImageView.image = clipImage;
 }
 
 @end

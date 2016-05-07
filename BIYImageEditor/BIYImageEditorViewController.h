@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol BIYImageEditorDelegate <NSObject>
+
+- (void)clipImageFromEditor:(UIImage *)clipImage;
+
+@end
+
 @interface BIYImageEditorViewController : UIViewController
+
+@property (weak, nonatomic) id<BIYImageEditorDelegate> delegate;
 
 @end
